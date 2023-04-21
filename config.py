@@ -2,7 +2,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemo
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-TOKEN_API = '6196467878:AAE-c1oWyfNMuAmzPMfGk3vaAtabYmEmP2I'
+TOKEN_API = 'YOUR_TOKEN'
 
 kb = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
 rock = KeyboardButton(text='✊')
