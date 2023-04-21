@@ -28,17 +28,17 @@ async def command_game(message: types.message):
     if message.text == choice:
         await asyncio.sleep(0.5)
         draw = f'''Ничья, бот:{choice} •  Вы:{message.text} - ⏳счет: {user_is_win}:{bot_is_win}'''
-        await bot.send_message(message.from_user.id, text=draw, reply_markup=ikb)
+        await bot.send_message(chat_id=message.from_user.id, text=draw, reply_markup=ikb)
     elif message.text == '✊' and choice == '✌️' or message.text == '✋' and choice == '✊' or message.text == '✌️' and choice == '✋':
         await asyncio.sleep(0.5)
         user_is_win += 1
         user_win = f'''Вы выиграли, бот:{choice} •  Вы:{message.text} - ⏳счет: {user_is_win}:{bot_is_win}'''
-        await bot.send_message(message.from_user.id, text=user_win, reply_markup=ikb)
+        await bot.send_message(chat_id=message.from_user.id, text=user_win, reply_markup=ikb)
     else:
         await asyncio.sleep(0.5)
         bot_is_win += 1
         bot_win = f'''Бот выиграл, бот:{choice} •  Вы:{message.text} - ⏳счет: {user_is_win}:{bot_is_win}'''
-        await bot.send_message(message.from_user.id, text=bot_win, reply_markup=ikb)
+        await bot.send_message(chat_id=message.from_user.id, text=bot_win, reply_markup=ikb)
 
 @dp.callback_query_handler()
 async def reset_check(callback: types.callback_query):
